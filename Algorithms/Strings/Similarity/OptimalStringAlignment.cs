@@ -130,7 +130,7 @@ namespace Algorithms.Strings.Similarity
 
                     if (i > 1 && j > 1
                         && firstString[i - 1] == secondString[j - 2]
-                        && firstString[i - 2] == secondString[j - 1])
+                        && firstString[i - 2] == secondString[j - 1] && Math.Abs(i - j) == 1) // Adding this condition as for OSA only adjacent transpositions can be allowed as per logic. This was missing.
                     {
                         distanceMatrix[i, j] = Math.Min(
                             distanceMatrix[i, j],
